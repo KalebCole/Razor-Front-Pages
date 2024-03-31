@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 //builder.Services.AddDbContext<ItemsContext>(); --> this is calling the constructor of the ItemsContext class
 builder.Services.AddDbContext<ItemsContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Default")))
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 // builder.configuration refers to the appsettings.json file
 // so anything in the appsettings.json file can be accessed using builder.configuration
 
