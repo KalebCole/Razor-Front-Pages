@@ -5,9 +5,11 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "RazorCrudUI\UI.csproj", "{945C1D5C-F394-4AEB-BC65-71864E0EF9B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{E895047F-9068-410B-834B-FF9CF0B7319F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{E895047F-9068-410B-834B-FF9CF0B7319F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{D5FE4BC9-10C9-4C40-94E9-D4D96AF7A9E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{D5FE4BC9-10C9-4C40-94E9-D4D96AF7A9E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMem", "DataMem\DataMem.csproj", "{9AE21E48-ABEA-4674-A25A-F69B426184B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D5FE4BC9-10C9-4C40-94E9-D4D96AF7A9E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5FE4BC9-10C9-4C40-94E9-D4D96AF7A9E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5FE4BC9-10C9-4C40-94E9-D4D96AF7A9E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AE21E48-ABEA-4674-A25A-F69B426184B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AE21E48-ABEA-4674-A25A-F69B426184B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AE21E48-ABEA-4674-A25A-F69B426184B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AE21E48-ABEA-4674-A25A-F69B426184B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

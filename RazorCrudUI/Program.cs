@@ -5,6 +5,7 @@
 using Data;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using DataMem;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,7 @@ builder.Services.AddDbContext<ItemsContext>(options =>
 // builder.configuration refers to the appsettings.json file
 // so anything in the appsettings.json file can be accessed using builder.configuration
 
-builder.Services.AddScoped<IItemRepository, ItemRepositoryEf>();
+builder.Services.AddScoped<IItemRepository, ItemRepositoryMem>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
