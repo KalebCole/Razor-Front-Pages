@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{D5FE4BC9-10C9-4C40-94E9-D4D96AF7A9E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMem", "DataMem\DataMem.csproj", "{9AE21E48-ABEA-4674-A25A-F69B426184B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataMem", "DataMem\DataMem.csproj", "{9AE21E48-ABEA-4674-A25A-F69B426184B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

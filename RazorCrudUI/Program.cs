@@ -17,7 +17,8 @@ builder.Services.AddDbContext<ItemsContext>(options =>
 // builder.configuration refers to the appsettings.json file
 // so anything in the appsettings.json file can be accessed using builder.configuration
 
-builder.Services.AddScoped<IItemRepository, ItemRepositoryMem>();
+//builder.Services.AddScoped<IItemRepository, ItemRepositoryMem>();
+builder.Services.AddSingleton<IItemRepository, ItemRepositoryMem>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -35,10 +36,10 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapGet("/", async context =>
-{
-    context.Response.Redirect("/items/");
-});
+//app.MapGet("/", async context =>
+//{
+//    context.Response.Redirect("/items/");
+//});
 app.MapRazorPages();
 
 app.Run();

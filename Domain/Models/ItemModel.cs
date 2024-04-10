@@ -24,19 +24,17 @@ namespace Domain.Models
         [Display(Name = "How much it'll cost ya")]
         public decimal? Price { get; set; }
 
+        [Display(Name = "Image URL")]
+        public string? ImageURL { get; set; }
+
+
         //create tracking
         public DateTime? CreatedAt { get; set; }
         public string? CreatedBy { get; set; }
-
-        // update tracking
-        //public DateTime UpdatedAt { get; set; }
-        //public string UpdatedBy { get; set; }
-
         // delete tracking
         public bool isDeleted { get; set; } = false;
 
-        //public DateTime? DeletedAt { get; set; }
-        //public string DeletedBy { get; set; }
+
 
 
     }
