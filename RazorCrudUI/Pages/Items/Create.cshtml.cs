@@ -2,16 +2,19 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Domain.Models;
 using Domain.Interfaces;
+using UI.Utilities;
 
 namespace UI.Pages.Items
 {
     public class CreateModel : PageModel
     {
         private readonly IItemRepository _repo;
+        private readonly IWebHostEnvironment _env;
 
-        public CreateModel(IItemRepository repo)
+        public CreateModel(IItemRepository repo, IWebHostEnvironment env)
         {
             _repo = repo;
+            _env = env;
         }
 
         public IActionResult OnGet()
@@ -30,8 +33,15 @@ namespace UI.Pages.Items
             {
                 return Page();
             }
+            // HttpContext represents the incoming request from the client
+            if(HttpContext.Request.Form.Files.Count > 0)
+            {
+                ItemModel.ImageURL = FileHelper.UploadImage(_env, HttpContext.Request.Form.Files[0]);
+            }
+            //ItemModel.ImageURL = await ItemModel.UploadImageAsync(_env);
             await _repo.InsertItemAsync(ItemModel);
             return RedirectToPage("./Index");
         }
-    }
+
+            }
 }

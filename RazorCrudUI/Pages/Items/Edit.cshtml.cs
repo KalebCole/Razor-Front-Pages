@@ -3,16 +3,20 @@ using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using UI.Utilities;
 
 namespace UI.Pages.Items
 {
     public class EditModel : PageModel
     {
         private readonly IItemRepository _repo;
+		private readonly IWebHostEnvironment _env;
 
-        public EditModel(IItemRepository repo)
+
+		public EditModel(IItemRepository repo, IWebHostEnvironment env)
         {
             _repo = repo;
+            _env = env;
         }
 
         [BindProperty]
@@ -45,7 +49,15 @@ namespace UI.Pages.Items
             {
                 return Page();
             }
-            var dbItem = await _repo.UpdateItemAsync(ItemModel);
+			// HttpContext represents the incoming request from the client
+			if (HttpContext.Request.Form.Files.Count > 0)
+			{
+				//delete the old image
+                FileHelper.DeleteOldImage(_env, ItemModel.ImageURL);                
+                //set the new image
+                ItemModel.ImageURL = FileHelper.UploadImage(_env, HttpContext.Request.Form.Files[0]);
+			}
+			var dbItem = await _repo.UpdateItemAsync(ItemModel);
             if (dbItem == false)
             {
                 ModelState.AddModelError(string.Empty, "Failed to update item.");

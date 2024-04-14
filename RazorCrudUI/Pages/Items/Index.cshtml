@@ -47,6 +47,9 @@
 	<thead>
 		<tr>
 			<th>
+				@Html.DisplayNameFor(model => model.ItemModel[0].ImageURL)
+			</th>
+			<th>
 				<!-- HTML helper tage that is dependent on the name in our model-->
 				@Html.DisplayNameFor(model => model.ItemModel[0].Name)
 			</th>
@@ -63,6 +66,17 @@
 		@foreach (var item in Model.ItemModel)
 		{
 			<tr>
+				<td>
+					@if (!string.IsNullOrEmpty(@item.ImageURL))
+					{
+						<img src="@item.ImageURL" class="card-img" style="height: 25px; width: auto" />
+					}
+					else
+					{
+						<img src="~/assets/PlaceHolder.png" class="card-img" style="height: 25px; width: auto"/>
+					}
+
+				</td>
 				<td>
 					@Html.DisplayFor(modelItem => item.Name)
 				</td>
